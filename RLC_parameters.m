@@ -8,4 +8,4 @@ R = 2;
 C = 1;
 L = 1; 
 
-sim('CircuitoRLC')
+sim('RLC')
