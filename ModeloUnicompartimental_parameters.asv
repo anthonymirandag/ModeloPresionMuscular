@@ -2,11 +2,14 @@ clc
 clear all
 close all
 
-%Parametros de circuito
-%V = 5; %v
-R = 20;
-C = 0.015;
-L = 1;
-Pvent = 20;
+function [] = sim_modelo_unicompartimental(k)
+    %Parametros del Modelo
+    R = 4; % resistencia de la vía aérea
+    C = 0.05; % complianza o distensibilidad
+    Pvent = 20; % a presión ventilatoria
+    K = k; % contanstate Pmus = K * V/C
+    sim('ModeloUnicompartimental')
+end
 
-sim('RLC')
+% Simulacion  1 Pmust = 1cmH2O
+sim_modelo_unicompartimental(0.1)
